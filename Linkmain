@@ -1,0 +1,45 @@
+public class LinkMain {
+    public static void main(String[] args){
+       
+        Linklist_1 A = new Linklist_1();
+        
+        System.out.println(" Student List: ");
+        System.out.println(" ");
+        A.Insert("Kaycee Villanueva", 5, "BSCpE", "Third", "kaycee@gmail.com");
+        A.Insert("Kingkong", 4, "BSCpE", "Third", "Monmon@gmail.com");
+        A.Insert("Chloe", 3, "BSCpE", "Third", "Chloe@gmail.com");
+        A.Insert("Istoy", 2, "BSCpE", "Third", "Istoy@gmail.com");
+        A.Insert("Miko", 1, "BSCpE", "Third", "Mikoo@gmail.com");
+        A.Display();
+        System.out.println(" ");
+        System.out.println("Searching...");
+        System.out.println(" ");
+        System.out.println("------------------------ ");
+        A.Search();
+        System.out.println(" ");
+        System.out.println("Updating Data...");
+        System.out.println(" ");
+        System.out.println("------------------------ ");
+        System.out.println("Student List: ");
+        System.out.println(" ");
+        System.out.println("------------------------ ");
+        A.Update("Tukoy", 6, "BSCpE", "Third", "Tukoy@gmail.com");
+        A.Update("Lyn", 7, "BSCpE", "Third", "Lyn@gmail.com");
+        A.Update("Imbo", 8, "BSCpE", "Third", "Imbo@gmail.com");
+        A.Display();
+        System.out.println(" ");
+        System.out.println("Delete Data...");
+        System.out.println("------------------------ ");
+        System.out.println(" ");
+        A.Delete();
+        System.out.println(" ");
+        System.out.println("Updating Data...");
+        System.out.println(" ");
+        System.out.println("------------------------ ");
+        System.out.println("Student List: ");
+        System.out.println(" ");
+        System.out.println("------------------------ ");
+        A.Update("Kaycee Villanueva", 5, "BSCpE", "Third", "kaycee@gmail.com");
+        A.Display();
+    }   
+}
