@@ -1,0 +1,36 @@
+public class INTTTT {
+    public static int search(int K[], int C){
+         
+        for (int i = 0; i < K.length;i++) {
+            
+             if (K[i] == C){
+                return i;
+                
+             }
+         }
+            return -1;
+     }
+        
+     public static void main(String[] args){
+         
+         int K[] = new int [2000];
+         int C;
+     
+        for (int b = 0; b < K.length;b++) {
+          C = (int) (Math.random() * 2000);
+          int result = search(K,C);
+          
+          while (result != -1){
+                C = (int) (Math.random() * 2000);
+                result = search(K,C);
+                
+                if (C == 0){
+                    K[b] = C;
+                    break;
+                }
+            }
+            K[b] = C;
+            System.out.println(K[b]);
+         }
+     }
+    }
