@@ -1,0 +1,33 @@
+public class FLOAATT {
+    public static float search(float KKY[], float KKV) {
+
+        for (int i = 0; i < KKY.length; i++) {
+            if (KKY[i] == KKV) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+
+        float KKY[] = new float[15];
+        float KKV;
+        
+        for (int k = 0; k < KKY.length; k++) {
+            float rand = floatKK(1.0f, 10.0f);
+            KKV = rand;
+            float result = search(KKY, KKV);
+            while (result != -1) {
+                KKV = (float) (Math.random() * 15);
+                result = search(KKY, KKV);
+            }
+            KKY[k] = KKV;
+            System.out.println(KKY[k]);
+        }
+    }
+
+    public static float floatKK(float min, float max) {
+        return (ThreadLocalRandom.current().nextFloat() * (max - min)) + min;
+    }
+}
