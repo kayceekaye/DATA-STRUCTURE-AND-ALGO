@@ -1,0 +1,14 @@
+public class main {
+    public static void main(String[] args){
+        
+        root A = new root();
+        
+        A.add (12);
+        A.add(13);
+        A.add(8);
+        A.add(9);
+        A.add(6);
+        A.add(7); 
+        A.printPreorder();
+}
+}
