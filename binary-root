@@ -1,0 +1,38 @@
+public class root {
+   
+
+node link;
+    node root;
+   
+        private node Insert(node link, int A){
+            if (link == null){
+                return new node(A);
+            }else if (A < link.A){
+                    link.Right = Insert(link.Right, A);
+                    
+            }else if (A < link.A){
+                return link;
+            }else{
+                link.Left = Insert(link.Left, A);  
+                
+            }
+            return link;
+        }
+        
+        public void add(int value) {
+            root = Insert(root, value);
+        }
+         void displayPreorder(node link){
+           
+           if(link == null){
+               return;
+           }
+               System.out.println(link.A + " ");
+               displayPreorder(link.Left);
+               displayPreorder(link.Right);
+               
+        }
+        void printPreorder(){
+            displayPreorder(root);
+        }
+}
