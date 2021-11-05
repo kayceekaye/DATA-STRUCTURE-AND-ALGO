@@ -1,0 +1,14 @@
+public class node {
+
+int A;
+    node Left;
+    node Right;
+    
+    public node(int A){
+        this.A = A;
+        Right = null;
+        Left = null;
+}
+
+   
+        }
