@@ -1,0 +1,54 @@
+public class Insertion {
+void ISort1(int C[]){
+      
+        for (int i = 0; i < C.length; i++) {
+            int key = C[i];
+            int j = i - 1;
+            while(j >= 0 && C[j] > key){
+                C[j+1] = C[j];
+                j = j -1;
+            }
+            C[j+1] = key;
+        }
+    }
+    public static int find(int C[], int K){
+         
+        for (int i = 0; i < C.length;i++) {
+             if (C[i] == K){
+                return i;
+             }
+         }
+            return -1;
+     }
+    void Proc(int C[], int K){
+        Insertion Sort = new Insertion();
+        
+        for (int k = 0; k < C.length;k++) {
+         int result = find(C,K);
+         while (result != -1){
+              K = (int) (Math.random() * 1000);
+               result = find(C,K);
+               if (result == 0){
+                   break;
+                }
+            }
+         C[k] = K;
+         }
+        Sort.ISort1(C);
+    }
+    void Print(int C[]){
+        for (int i = 0; i < C.length; i++) {
+            System.out.println(C[i]);
+        }
+    }
+    public static void main(String[] args){
+        Insertion Sort = new Insertion();
+        
+        int Y[] = new int [2000];
+        int K = (int) (Math.random() * 2000);
+        
+          Sort.Proc(Y,K);
+          Sort.Print(Y);
+         
+    }
+}
