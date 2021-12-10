@@ -1,0 +1,53 @@
+public class Bubble {
+    void BubbleS1(int K[]){
+        
+    for (int i = 0; i < K.length-1; i++) {
+    for (int j = 0; j < K.length-i-1; j++) {
+    if (K[j] > K[j+1]){
+    int C = K[j];
+    K[j] = K[j+1];
+    K[j+1] = C;
+    }
+    }
+    }
+    }
+    public static int find(int A[], int B){
+         
+    for (int i = 0; i < A.length;i++) {
+    if (A[i] == B){
+    return i;
+     }
+     }
+        return -1;
+     }
+    void Proc(int A[], int B){
+    Bubble BSort = new Bubble();
+    for (int k = 0; k < A.length;k++) {
+    int result = find(A,B);
+    while (result != -1){
+     B = (int) (Math.random() * 100);
+     result = find(A,B);
+    if (result == 0){
+    break;
+    }
+    }
+     A[k] = B;
+    }
+   BSort.BubbleS1(A);
+    }
+    void Print(int A[]){
+      for (int i = 0; i < A.length; i++) {
+    System.out.println(A[i]);
+    }
+    }
+    public static void main(String[] args){
+    Bubble BSort  = new Bubble();
+        
+    int C[] = new int [2000];
+   int B = (int) (Math.random() * 2000);
+   BSort.Proc(C, B);
+   BSort.Print(C);
+         
+    }
+
+}
