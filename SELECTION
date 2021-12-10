@@ -1,0 +1,57 @@
+public class Selection {
+    void SSort1(int C[]){
+      
+        for (int i = 0; i < C.length-1; i++) {
+            int min = i;
+            for (int j = i+1; j < C.length; j++) {
+                if (C[j] < C[min]){
+                    min = j;
+                }
+            }
+                int Y = C[min];
+               C[min] = C[i];
+               C[i] = Y;
+            
+        }
+    }
+    public static int find(int C[], int K){
+         
+        for (int i = 0; i < C.length;i++) {
+             if (C[i] == K){
+                return i;
+             }
+         }
+            return -1;
+     }
+    void Proc(int C[], int K){
+          Selection  Sort = new   Selection ();
+        
+        for (int k = 0; k < C.length;k++) {
+         int result = find(C,K);
+         while (result != -1){
+               K = (int) (Math.random() * 2000);
+               result = find(C,K);
+               if (result == 0){
+                   break;
+                }
+            }
+         C[k] = K;
+         }
+        Sort.SSort1(C);
+    }
+    void Print(int C[]){
+        for (int i = 0; i < C.length; i++) {
+            System.out.println(C[i]);
+        }
+    }
+    public static void main(String[] args){
+        Selection Sort = new   Selection ();
+        
+        int Y [] = new int [2000];
+        int K = (int) (Math.random() * 2000);
+        
+          Sort.Proc(Y,K);
+          Sort.Print(Y);
+         
+    }
+}
