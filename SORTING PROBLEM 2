@@ -1,0 +1,47 @@
+public class sort2 {
+    
+    void SORTSSS (int C[]){
+      
+        for (int L = 0; L < C.length; L++) {
+            int key = C[L];
+            int K = L - 1;
+            while(K >= 0 && C[K] > key){
+                C[K+1] = C[K];
+                K = K -1;
+            }
+            C[K+1] = key;
+        }
+    }
+    
+    static boolean SAMEPAIR(int A[], int size, int x){
+        sort2 sort = new sort2 ();
+        
+        for (int L = 0; L < (size - 1); L++) {
+            for (int K = (L + 1); K < size; K++) {
+                sort.SORTSSS(A);      
+                if (A[L] + A[K] == x) {
+                    System.out.println("SAME WITH SUM " + x +" is (" + A[L] + ", " + A[K] + ")");
+                    return true;
+                }
+            }
+        }
+    return false;
+    }
+    
+    
+    public static void main(String[] args){
+        
+      int Arr[] = {20, 12, 6, 3, 1};
+      int x = 11;
+      int size = Arr.length;
+      
+      if (SAMEPAIR(Arr, size, x)) {
+        System.out.println("Valid pair !! ");
+      }
+      else {
+        System.out.println("No valid pair !! " + x );
+      }
+    }
+}
+
+
